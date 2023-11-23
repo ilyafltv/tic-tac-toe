@@ -1,0 +1,118 @@
+.game-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.game-content__whose_move{
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0 0 20px;
+    line-height: 1;
+}
+.game-content__cells{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+} 
+.game-content__cell{
+    background-image: url("../../img/tile_empty.svg");  
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 150px;
+    height: 150px;  
+    cursor: pointer;
+}
+.game-content__score{
+    font-size: 120px;
+    font-weight: 600;
+    margin: 15px 0;
+}
+.game-content__names{
+    z-index: -1;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    font-size: 200px;
+    font-weight: bold;
+    color: var(--color-dim);
+}
+.game-content__name{
+    margin: 0 5%;
+    user-select: none;
+}
+.cell-cross {
+    background-image: url("../../img/tile_cross.svg");  
+}
+.cell-zero {
+    background-image: url("../../img/tile_zero.svg");  
+}
+.game-content__btn {
+    display: none;
+    border-radius: 6px;
+    border: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    background-color: var(--color-bright);
+    margin-top: 25px;
+    font-size: 20px;
+    padding: 10px 60px;
+    transition: .2s;    
+    cursor: pointer;
+}
+.game-content__btn-show {
+    display: block;
+}
+.game-content__btn:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+@media screen and (max-width: 1024px) {
+    .game-content__names{
+        font-size: 100px;
+    }
+    .game-content__cells{
+        gap: 10px;
+    }
+    .game-content__cell{
+        width: 100px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .game-content__whose_move{
+        font-size: 65px;
+    }
+    .game-content__score {
+        font-size: 70px;
+    }
+    .game-content__names{
+        top: 600px;
+        font-size: 50px;
+    }
+}
+@media screen and (max-width: 375px) {
+    .game-content__whose_move{
+        font-size: 50px;
+    }
+    .game-content__cell{
+        width: 70px;
+        height: 70px;
+    }
+    .game-content__score {
+        font-size: 55px;
+    }
+    .game-content__names{
+        top: 450px;
+        font-size: 30px;
+    }
+}
